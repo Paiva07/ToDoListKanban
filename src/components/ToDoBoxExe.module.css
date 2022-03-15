@@ -1,0 +1,23 @@
+.box {
+  text-align: center;
+  border: 2px solid white;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.input {
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.btn {
+  border-radius: 5px;
+  height: 3rem;
+  color: white;
+  background-color: #9966cc;
+  margin-left: 1rem;
+  cursor: pointer;
+  border: none;
+  border: 1px solid white;
+}

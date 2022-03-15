@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header';
+import ToDoBox from './components/ToDoBox';
+import ToDoBoxExe from './components/ToDoBoxExe';
+import ToDoBoxFin from './components/ToDoBoxFin';
 
 function App() {
+  const [statePendente, setStatePendente] = React.useState([]);
+  const [stateExecutando, setStateExecutando] = React.useState([]);
+  const [stateFinalizado, setStateFinalizado] = React.useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="container">
+        <ToDoBox
+          title="Pendente"
+          statePendente={statePendente}
+          setStatePendente={setStatePendente}
+          stateExecutando={stateExecutando}
+          setStateExecutando={setStateExecutando}
+        />
+        <ToDoBoxExe
+          title="Executando"
+          stateExecutando={stateExecutando}
+          setStateExecutando={setStateExecutando}
+          stateFinalizado={stateFinalizado}
+          setStateFinalizado={setStateFinalizado}
+        />
+        <ToDoBoxFin
+          title="Finalizado"
+          stateFinalizado={stateFinalizado}
+          setStateFinalizado={setStateFinalizado}
+        />
+      </div>
     </div>
   );
 }
